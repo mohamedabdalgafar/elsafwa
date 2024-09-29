@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب الصفوة للتسويق العقاري</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>مكتب الصفوة للتسويق العقاري يرحب بكم</h1>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <button id="logout-button" class="hidden" onclick="logout()">تسجيل الخروج</button>
+        <button id="login-button" onclick="location.href='login/login.html'">تسجيل الدخول</button>
+    </header>
+    
+    <div id="welcome-message">مرحبا بكم في موقع الصفوة للتسويق العقاري</div>
+
+    <main>
+        <div id="property-list"></div>
+
+        <div id="add-property" class="hidden">
+            <h2>إضافة عقار جديد</h2>
+            <select id="new-property-type">
+                <option value="" disabled selected>اختر نوع العقار</option>
+                <option value="Apartment">شقة</option>
+                <option value="Home">منزل</option>
+                <option value="Land">أرض</option>
+            </select>
+            <textarea id="new-property-description" placeholder="وصف العقار" rows="4"></textarea>
+            <input type="number" id="new-property-price" placeholder="سعر العقار">
+            <input type="file" id="new-image-input" multiple>
+            <button onclick="addProperty()">إضافة عقار</button>
+        </div>
+    </main>
+
+    <section id="details-section" class="hidden">
+        <div class="details-content">
+            <span class="close-btn" onclick="hideDetails()">&#10006;</span>
+            <div id="details"></div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 مكتب الصفوة للتسويق العقاري</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
